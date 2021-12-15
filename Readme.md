@@ -135,6 +135,7 @@ a = Attack(argv[1], int(argv[2]))
 a.trigger()
 
 ```
+其实本来打算开PIE，这样构造ROP会相对麻烦。虽然mini_httpd的daemon可以保持基地址不变，但是ret2csu中只有W0而无X0，导致ROP最终调用函数的首参数不能为字符串地址。有兴趣的同学可以试试开启PIE下的漏洞利用。
 
 ## 一则广告（不是）
 
